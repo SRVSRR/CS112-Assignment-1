@@ -1,96 +1,45 @@
-Certainly! Here's a README template tailored for a university-assessed project:
-
----
-
-# [Project Title]
+# Student Performance Analysis & Reworking
 
 ## Overview
 
-This project was developed as part of the [Course Name] course at [University Name]. The objective of this project is to [briefly describe the purpose of the project and its goals]. This README file provides an overview of the project's structure, installation instructions, usage, and other relevant information.
+This project is designed to analyze and process student performance data from a text file (`studentData.txt`). The program calculates and displays statistics related to students coursework and final exam scores.
 
-## Table of Contents
+## Key Features
 
-- [Project Description](#project-description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Methodology](#methodology)
-- [Results](#results)
-- [Contributors](#contributors)
-- [Acknowledgments](#acknowledgments)
-- [License](#license)
+- **Data Input & Display**: The program reads student marks data from a text file (`studentData.txt`) and display it to the user.
+- **Updatable Marks**: The code can be easily modified to adjust student marks. 
+- **Score Calculation**: It calculates the average mark for the class by adding every coursework and final exam mark then dividing by total number of students.
+- **Pass Rate**: It determines the percent of students that have passed based on thresholds.
+- **Identification of Top Overall Scorer**: The program identifies the student with the highest scores using the combination of coursework and final exam marks.
 
-## Project Description
+## How to Use
 
-[Provide a detailed description of the project, including the problem statement, objectives, and the approach taken to solve the problem. Mention any specific theories, models, or frameworks used.]
+[
+![Uploading Screenshot 2024-08-21 at 17.57.04.png…]()
+](url)
 
-## Installation
+### Files
 
-[Detail the steps required to install and run the project. Include any software or libraries that need to be installed.]
+- **A1_S11230430_S11234883.cpp**: The main C++ source code file.
+- **studentData.txt**: The text file containing the student data, formatted as follows:
+  - `ID`, `Coursework`, `Final_Exam`
+  - Example:
+    ```
+    S00001,46.05,39.4
+    S00002,23.6,12.4
+    ```
 
-```bash
-# Example command for installing dependencies
-pip install -r requirements.txt
-```
+### Output
 
-[Include any other necessary setup instructions, such as database configuration or environment variables.]
+The program will display:
 
-## Usage
-
-[Explain how to use the project, including examples of how to run the code, input data formats, and expected outputs.]
-
-```bash
-# Example command to run the project
-python main.py
-```
-
-[If applicable, provide screenshots or sample outputs to illustrate the usage.]
-
-## Project Structure
-
-[Provide an overview of the project's file structure, explaining the purpose of each major file or directory.]
-
-```bash
-project-directory/
-├── data/
-│   ├── raw/              # Raw data files
-│   ├── processed/        # Processed data files
-├── src/
-│   ├── main.py           # Main script
-│   ├── utils.py          # Utility functions
-├── reports/
-│   ├── final-report.pdf  # Final report of the project
-├── README.md             # This README file
-└── requirements.txt      # List of dependencies
-```
-
-## Methodology
-
-[Describe the methodology used in the project, including any research methods, algorithms, or analytical techniques applied.]
-
-## Results
-
-[Present the results or findings of the project. Include any data visualizations, analysis, or key insights gained.]
+- The average coursework and final exam scores.
+- The IDs of students with the highest scores.
+- The IDs of students who have failed based on the defined thresholds.
 
 ## Contributors
 
 This project was completed by:
 
-- [Your Name] - [Student ID]
-- [Collaborator Name] - [Student ID] (if applicable)
-
-## Acknowledgments
-
-[Recognize any individuals, groups, or resources that were helpful in completing the project.]
-
-- Lecturer: [Lecturer's Name]
-- University: [University Name]
-- Additional resources or tools
-
-## License
-
-This project is for academic purposes and is not licensed for commercial use. All rights are reserved by [University Name] and the authors.
-
----
-
-This template is designed to provide all the necessary information for a university project submission while maintaining clarity and professionalism. Adjust the sections as needed based on the specific requirements of your project.
+- Rohan Nandan - S11234883
+- Vishant Kumar - S11230430
