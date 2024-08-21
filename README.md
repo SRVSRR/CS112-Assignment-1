@@ -15,7 +15,7 @@ This project is designed to analyze and process student performance data from a 
 ## How to Use
 
 [
-![Uploading Screenshot 2024-08-21 at 17.57.04.png…]()
+<img width="1470" alt="Screenshot 2024-08-21 at 17 57 04" src="https://github.com/user-attachments/assets/1fe3b29a-3918-46ee-b538-3b54f83221ad">
 ](url)
 
 ### Files
