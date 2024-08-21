@@ -24,36 +24,7 @@ This project is designed to analyze and process student performance data from a 
 - **Pass Rate**: It determines the percent of students that have passed based on thresholds.
 - **Identification of Top Overall Scorer**: The program identifies the student with the highest scores using the combination of coursework and final exam marks.
 
-## How to Use, Processes & Output
-
-### 1. **Program Initialization and Enter Program**
-
-
-
-### 3. **File Reading**
-
-   - **Input**: `studentData.txt`
-   - **Process**:
-     - The program opens and reads the `studentData.txt` file.
-     - The data is parsed into an internal data structure (e.g., arrays or vectors) for further processing.
-   - **Output**: Data from `studentData.txt` is stored in memory for analysis.
-
-### 4. **Menu Display**
-
-   - **Process**:
-     - The program displays a menu of options to the user.
-     - Each option corresponds to a different function or analysis that the program can perform.
-   - **Output**: Menu is displayed, and the program awaits user input.
-
-### 5. **User Input Handling**
-
-   - **Input**: User selects an option from the menu.
-   - **Process**:
-     - The program reads and validates the user's input.
-     - The program directs execution to the appropriate function based on the selected option.
-   - **Output**: The program prepares to execute the selected option.
-
-### 6. **Option Execution**
+## Option Execution
 
    Depending on the option selected by the user, the following processes may occur:
 
@@ -97,7 +68,8 @@ This project is designed to analyze and process student performance data from a 
    - **Option 6: Exit Program**
      - **Process**:
        - The program leaves the loop and terminates.
-     - **Output**: End program message is displayed to user.
+     - **Output**: 
+       - End program message is displayed to user.
 
 [
 <img width="1470" alt="Screenshot 2024-08-21 at 17 57 04" src="https://github.com/user-attachments/assets/1fe3b29a-3918-46ee-b538-3b54f83221ad">
