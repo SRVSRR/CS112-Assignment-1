@@ -1,5 +1,17 @@
 # Student Performance Analysis & Reworking
 
+## Contributors
+
+This project was completed by:
+
+- Rohan Nandan - S11234883
+- Vishant Kumar - S11230430
+
+### Files
+
+- **A1_S11230430_S11234883.cpp**: The main C++ source code file.
+- **studentData.txt**: The text file containing the student data.
+
 ## Overview
 
 This project is designed to analyze and process student performance data from a text file (`studentData.txt`). The program calculates and displays statistics related to students coursework and final exam scores.
@@ -12,10 +24,9 @@ This project is designed to analyze and process student performance data from a 
 - **Pass Rate**: It determines the percent of students that have passed based on thresholds.
 - **Identification of Top Overall Scorer**: The program identifies the student with the highest scores using the combination of coursework and final exam marks.
 
-## How to Use
+## How to Use, Processes & Output
 
-### 1. **Welcome Message, Program Initialization and File Reading**
-After code compiles and runs you'll be met with the welcome message. Entering 'S' or 's' will begin the program whereas entering 'Q' or 'q' will end the program. Both are It has also been made to input validate incase of invalid or 
+### 1. **Program Initialization and Enter Program**
 
 
 
@@ -69,47 +80,26 @@ After code compiles and runs you'll be met with the welcome message. Entering 'S
      - **Output**: 
        - Displays and prints the class average to the user.
 
-   - **Option 5: Pass Rate**
+   - **Option 4: Pass Rate**
      - **Process**:
-       - The program checks each student's scores against predefined thresholds.
-       - It identifies students who have failed either coursework, the final exam, or both.
-       - The IDs of failing students are displayed.
-     - **Output**: IDs of failing students are printed on the screen.
+       - The program calculates the total for each student and checks it against the threshold of 50. 
+       - It then calculates the total number of students that have gotten equal to or greater than 50 and divides it by total students.
+       - The final calculation is multiplied by 100 to be turned into a percentage.
+     - **Output**: 
+       - Percent of students that have passed is displayed to user.
 
-   - **Option 4: Exit Program**
+   - **Option 5: Print Highest Scorer Details**
      - **Process**:
-       - The program gracefully shuts down, closing any open files and releasing resources.
-     - **Output**: Program terminates.
+       - The program calulcatesthe total for each student and identifies the student with the highest overall score.
+     - **Output**:
+       - Student ID, coursework, final exam marks and grade of highest scorer is displayed to user.
 
-
-This list outlines the flow of operations within the program, from startup to the execution of each option.
+   - **Option 6: Exit Program**
+     - **Process**:
+       - The program leaves the loop and terminates.
+     - **Output**: End program message is displayed to user.
 
 [
 <img width="1470" alt="Screenshot 2024-08-21 at 17 57 04" src="https://github.com/user-attachments/assets/1fe3b29a-3918-46ee-b538-3b54f83221ad">
 ](url)
 
-### Files
-
-- **A1_S11230430_S11234883.cpp**: The main C++ source code file.
-- **studentData.txt**: The text file containing the student data, formatted as follows:
-  - `ID`, `Coursework`, `Final_Exam`
-  - Example:
-    ```
-    S00001,46.05,39.4
-    S00002,23.6,12.4
-    ```
-
-### Output
-
-The program will display:
-
-- The average coursework and final exam scores.
-- The IDs of students with the highest scores.
-- The IDs of students who have failed based on the defined thresholds.
-
-## Contributors
-
-This project was completed by:
-
-- Rohan Nandan - S11234883
-- Vishant Kumar - S11230430
