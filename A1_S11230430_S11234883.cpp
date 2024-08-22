@@ -4,6 +4,8 @@
 using namespace std;
 
 const int SIZE = 20;
+const int MARK_UPDATE_MAX = 50;
+const int MARK_UPDATE_MIN = 0;
 
 struct Student{
 	string id;
@@ -148,32 +150,6 @@ string determineGrade(double totalMark)
 	}
 }
 
-int UpdateMark_Validation(int lowerLimit, int upperLimit)
-{
-    int input;
-    cin >> input;
-    
-    while(input < lowerLimit || input > upperLimit || cin.fail())
-	{
-        if (cin.fail())
-		{
-            cin.clear();
-            string dummy;
-            cin >> dummy;
-            cout << "ERROR! Invalid option detected." << endl;
-            cout << "Please enter a number." << endl;
-        }
-		else if (input < lowerLimit || input > upperLimit)
-		{
-            cin.clear();
-            cout << "ERROR! Your choice is not in range." << endl;
-            cout << "Please enter a number between " << lowerLimit << " and " << upperLimit << endl;
-        }
-        cin >> input;
-    }
-    return input;
-}
-
 void printEntireList(Student students[], int size)
 {
 	cout << "\nThe Entire List of Students with Grades:" << endl;
@@ -188,6 +164,31 @@ void printEntireList(Student students[], int size)
 		cout << left << setw(20) << students[i].id << setw(20) << students[i].coursework << setw(20) << students[i].finalExam << setw(20) << setw(20) << studentGrade << endl;
 		cout << "-----------------------------------------------------------------" << endl;
 	}
+}
+
+int UpdateMark_Validation(int MARK_UPDATE_MAX, int MARK_UPDATE_MIN){
+	int updateAmount;
+    cin >> updateAmount;
+    
+    while(updateAmount < MARK_UPDATE_MIN || updateAmount > MARK_UPDATE_MAX || cin.fail())
+	{
+        if (cin.fail())
+		{
+            cin.clear();
+            string dummy;
+            cin >> dummy;
+            cout << "ERROR! Invalid option detected." << endl;
+            cout << "Please enter a number." << endl;
+        }
+		else if (updateAmount < MARK_UPDATE_MIN || updateAmount > MARK_UPDATE_MAX)
+		{
+            cin.clear();
+            cout << "ERROR! Your choice is not in range." << endl;
+            cout << "Please enter a number between " << MARK_UPDATE_MIN << " and " << MARK_UPDATE_MAX << endl;
+        }
+        cin >> updateAmount;
+    }
+    return updateAmount;
 }
 
 void updateMark(Student students[], int size)
@@ -214,16 +215,14 @@ void updateMark(Student students[], int size)
 			found = true;
 			const int MIN_CHOICE = 1;
 			const int MAX_CHOICE = 3;
-			const int MARK_UPDATE_MAX = 50;
-			const int MARK_UPDATE_MIN = 0;
 
 			cout << "Which Mark Would You Like To Update?" << endl;
 			cout << "1. Coursework Only" << endl;
 			cout << "2. Final Exam Only" << endl;
 			cout << "3. Course and Final Exam" << endl;		
-			int choice;
-			cin >> choice;
-			while(choice < MIN_CHOICE || choice > MAX_CHOICE || cin.fail())
+			int Update_Choice;
+			cin >> Update_Choice;
+			while(Update_Choice < MIN_CHOICE || Update_Choice > MAX_CHOICE || cin.fail())
 			{
 				if (cin.fail())
 				{
@@ -233,98 +232,26 @@ void updateMark(Student students[], int size)
 					cout << "ERROR! Invalid option detected." << endl;
 					cout << "Please enter a number." << endl;
 				}
-				else if (choice < MIN_CHOICE || choice > MAX_CHOICE)
+				else if (Update_Choice < MIN_CHOICE || Update_Choice > MAX_CHOICE)
 				{
 					cin.clear();
 					cout << "ERROR! Your choice is not in range." << endl;
 					cout << "Please enter a number between " << MIN_CHOICE << " and " << MAX_CHOICE << endl;
 				}
-				cin >> choice;
+				cin >> Update_Choice;
 			}
-			switch(choice){
+			switch(Update_Choice){
 				case 1: cout << "Enter the new coursework mark: ";
-								cin >> students[i].coursework;								
-								while(students[i].coursework < MARK_UPDATE_MIN || students[i].coursework > MARK_UPDATE_MAX || cin.fail())
-									{
-										if (cin.fail())
-										{
-											cin.clear();
-											string dummy;
-											cin >> dummy;
-											cout << "ERROR! Invalid option detected." << endl;
-											cout << "Please enter a number." << endl;
-										}
-										else if (students[i].coursework < MARK_UPDATE_MIN || students[i].coursework > MARK_UPDATE_MAX)
-										{
-											cin.clear();
-											cout << "ERROR! Your choice is not in range." << endl;
-											cout << "Please enter a number between " << MARK_UPDATE_MIN << " and " << MARK_UPDATE_MAX << endl;
-										}
-										cin >> students[i].coursework;
-									}
+								students[i].coursework = UpdateMark_Validation(MARK_UPDATE_MAX, MARK_UPDATE_MIN);
 								break;
 				case 2: cout << "Enter the new final exam mark: ";
-								cin >> students[i].finalExam;
-								while(students[i].finalExam < MARK_UPDATE_MIN || students[i].finalExam > MARK_UPDATE_MAX || cin.fail())
-									{
-										if (cin.fail())
-										{
-											cin.clear();
-											string dummy;
-											cin >> dummy;
-											cout << "ERROR! Invalid option detected." << endl;
-											cout << "Please enter a number." << endl;
-										}
-										else if (students[i].finalExam < MARK_UPDATE_MIN || students[i].finalExam > MARK_UPDATE_MAX)
-										{
-											cin.clear();
-											cout << "ERROR! Your choice is not in range." << endl;
-											cout << "Please enter a number between " << MARK_UPDATE_MIN << " and " << MARK_UPDATE_MAX << endl;
-										}
-										cin >> students[i].finalExam;
-									}
-									break;
+								students[i].finalExam = UpdateMark_Validation(MARK_UPDATE_MAX, MARK_UPDATE_MIN);
+								break;
 				case 3: cout << "Enter the new coursework mark: ";
-								cin >> students[i].coursework;
-								while(students[i].coursework < MARK_UPDATE_MIN || students[i].coursework > MARK_UPDATE_MAX || cin.fail())
-									{
-										if (cin.fail())
-										{
-											cin.clear();
-											string dummy;
-											cin >> dummy;
-											cout << "ERROR! Invalid option detected." << endl;
-											cout << "Please enter a number." << endl;
-										}
-										else if (students[i].coursework < MARK_UPDATE_MIN || students[i].coursework > MARK_UPDATE_MAX)
-										{
-											cin.clear();
-											cout << "ERROR! Your choice is not in range." << endl;
-											cout << "Please enter a number between " << MARK_UPDATE_MIN << " and " << MARK_UPDATE_MAX << endl;
-										}
-										cin >> students[i].coursework;
-									}
+								students[i].coursework = UpdateMark_Validation(MARK_UPDATE_MAX, MARK_UPDATE_MIN);
 						cout << "Enter the new final exam mark: ";
-								cin >> students[i].finalExam;
-								while(students[i].finalExam < MARK_UPDATE_MIN || students[i].finalExam > MARK_UPDATE_MAX || cin.fail())
-									{
-										if (cin.fail())
-										{
-											cin.clear();
-											string dummy;
-											cin >> dummy;
-											cout << "ERROR! Invalid option detected." << endl;
-											cout << "Please enter a number." << endl;
-										}
-										else if (students[i].finalExam < MARK_UPDATE_MIN || students[i].finalExam > MARK_UPDATE_MAX)
-										{
-											cin.clear();
-											cout << "ERROR! Your choice is not in range." << endl;
-											cout << "Please enter a number between " << MARK_UPDATE_MIN << " and " << MARK_UPDATE_MAX << endl;
-										}
-										cin >> students[i].finalExam;
-									}
-							break;
+								students[i].finalExam = UpdateMark_Validation(MARK_UPDATE_MAX, MARK_UPDATE_MIN);
+								break;
 			}
 			students[i].totalMark = students[i].coursework + students[i].finalExam;
 			string studentGrade = determineGrade(students[i].totalMark);
@@ -455,6 +382,5 @@ int main()
 			endProgram(continueExecuting);
 		}
 	}
-	
 	return 0;
 }
