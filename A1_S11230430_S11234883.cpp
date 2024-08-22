@@ -306,14 +306,19 @@ void printPassRate(Student students[], int size)
 void printHighestScorersDetails(Student students[], int size)
 {
 	int highestScorerIndex = 0;
+	int highestScorerCounter;
 	
 	for (int i = 0; i < size; i++)
 	{
+		highestScorerCounter = 0;
+
 		students[i].totalMark = students[i].coursework + students[i].finalExam;
 		
 		if(students[i].totalMark > students[highestScorerIndex].totalMark)
 		{
 			highestScorerIndex = i;
+			highestScorerCounter++;
+
 		}
 	}
 	
@@ -321,7 +326,10 @@ void printHighestScorersDetails(Student students[], int size)
 	
 	cout << "\nHighest Scorer's Full Details:" << endl;
 	cout << "\n" << left << setw(20) << "ID" << setw(20) << "Coursework" << setw(20) << "Final Exam" << setw(20) << "Total" << setw(20) << "Grade" << endl;
+
+	for(int i = 0; i < highestScorerCounter; i++){
 	cout << left << setw(20) << students[highestScorerIndex].id << setw(20) << students[highestScorerIndex].coursework << setw(20) << students[highestScorerIndex].finalExam << setw(20) << students[highestScorerIndex].totalMark << setw(20) << studentGrade << endl;
+	}
 }
 
 int main()
@@ -346,13 +354,13 @@ int main()
 	printWelcomeMessage();
 	
 	programStartQuit(continueExecuting);
+
+	fillArray("studentData.txt", rows, students);
 	
 	while (continueExecuting)
 	{
-		rows = 0;
-		
-		fillArray("studentData.txt", rows, students);
-		
+		rows = 20;
+				
 		cout << endl;
 		displayMenu();
 		choice = validateInput(CHOICE1, CHOICE6);
