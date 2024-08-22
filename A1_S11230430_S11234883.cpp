@@ -306,21 +306,19 @@ void printPassRate(Student students[], int size)
 void printHighestScorersDetails(Student students[], int size)
 {
 	int highestScorerIndex = 0;
-	int highestScorerCounter;
+	int highestScorerCounter = 0;
 	
 	for (int i = 0; i < size; i++)
 	{
-		highestScorerCounter = 0;
 
 		students[i].totalMark = students[i].coursework + students[i].finalExam;
 		
 		if(students[i].totalMark > students[highestScorerIndex].totalMark)
 		{
 			highestScorerIndex = i;
-			highestScorerCounter++;
-
 		}
 	}
+	highestScorerCounter++;
 	
 	string studentGrade = determineGrade(students[highestScorerIndex].totalMark);
 	
